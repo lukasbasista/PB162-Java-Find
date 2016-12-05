@@ -97,7 +97,7 @@ public class FSWalkResultTest {
     }
 
     @Test
-    public void shouldWalkSimpleFiles() throws Exception {
+    public void shouldWalkFiles() throws Exception {
         FSWalkResult walkResult = getWalk("-d "+ simpleDir);
 
         assertEquals("Directories should be 1", 1, walkResult.getDirectories().size());
@@ -110,41 +110,12 @@ public class FSWalkResultTest {
         sPaths.add("file.cfg");
         sPaths.add("file.t");
         sPaths.add("file.txt");
-        sPaths.add("file0.txt");
+        sPaths.add(".file.txt");
+        sPaths.add(".DOC.hidden");
+
         List<Path> paths = createPaths(simpleDir, sPaths);
         testPaths(walkResult, paths);
 
     }
-
-    @Test
-    public void shouldNotWalkHiddenDirs() throws Exception {
-        FSWalkResult walkResult = getWalk("-d " + hiddenDir);
-
-        assertEquals("Directories should be 2", 2, walkResult.getDirectories().size());
-        assertTrue("Dirs should contains " + hiddenDir, dirContains(walkResult, hiddenDir));
-        assertFalse("Dirs should not contains " + hiddenDir +"/.hdir", dirContains(walkResult, hiddenDir + "/.hdir"));
-        assertEquals("Files should be 7", 7, walkResult.getFiles().size()); // Filter will be applied after walk
-
-        List<String> sPaths = new ArrayList<>();
-        sPaths.add(".config.hidden");
-        sPaths.add(".DOC.hidden");
-        sPaths.add(".file.txt");
-        sPaths.add(".hid.file");
-        sPaths.add(".test.hidden");
-        sPaths.add(".text.hidden");
-        List<Path> paths = createPaths(hiddenDir + "/files", sPaths);
-        testPaths(walkResult, paths);
-    }
-
-    @Test
-    public void shouldWalkHiddenDirs() throws Exception {
-        FSWalkResult walkResult = getWalk("-a -d " + hiddenDir);
-
-        assertEquals("Directories should be 3", 3, walkResult.getDirectories().size());
-        assertTrue("Dirs should contains " + hiddenDir, dirContains(walkResult, hiddenDir));
-        assertTrue("Dirs should contains " + hiddenDir +"/.hdir", dirContains(walkResult, hiddenDir + "/.hdir"));
-        assertEquals("Files should be 7", 7, walkResult.getFiles().size()); // Filter will be applied after walk
-    }
-
 
 }

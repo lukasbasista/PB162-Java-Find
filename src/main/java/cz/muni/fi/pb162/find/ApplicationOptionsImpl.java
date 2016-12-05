@@ -61,14 +61,6 @@ public class ApplicationOptionsImpl implements ApplicationOptions {
         return (strType == null) ? SearchEntry.Types.BOTH : mapEnum(strType);
     }
 
-
-    @Override
-    public boolean showAll() {
-        return options.get(OptionParser.OPT_ALL) != null;
-
-    }
-
-
     @Override
     public Long getSizeMax() {
         String size = options.get(OptionParser.OPT_SIZE_MAX);

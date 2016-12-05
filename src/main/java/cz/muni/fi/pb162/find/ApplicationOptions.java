@@ -40,13 +40,6 @@ public interface ApplicationOptions {
     SearchEntry.Types getType();
 
     /**
-     * Whether to list all entries (including hidden)
-     *
-     * @return true if show hidden, false otherwise
-     */
-    boolean showAll();
-
-    /**
      * Maximum file size, greater should be filtered
      *
      * @return maximum file size, null if filter should not be applied

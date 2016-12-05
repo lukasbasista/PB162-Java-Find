@@ -26,7 +26,6 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(null, opts.getSizeMin());
         assertEquals("f", opts.getSort());
-        assertEquals(false, opts.showAll());
     }
 
     @Test
@@ -39,7 +38,6 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(null, opts.getSizeMin());
         assertEquals("f", opts.getSort());
-        assertEquals(false, opts.showAll());
     }
 
     @Test
@@ -52,7 +50,6 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(null, opts.getSizeMin());
         assertEquals("f", opts.getSort());
-        assertEquals(true, opts.showAll());
     }
 
     @Test
@@ -65,7 +62,6 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(null, opts.getSizeMin());
         assertEquals("f", opts.getSort());
-        assertEquals(false, opts.showAll());
     }
 
     @Test
@@ -78,7 +74,6 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(null, opts.getSizeMin());
         assertEquals("f", opts.getSort());
-        assertEquals(false, opts.showAll());
     }
 
     @Test
@@ -91,7 +86,6 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(new Long(100L), opts.getSizeMin());
         assertEquals("f", opts.getSort());
-        assertEquals(false, opts.showAll());
     }
 
     @Test
@@ -104,7 +98,6 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(null, opts.getSizeMin());
         assertEquals("esf", opts.getSort());
-        assertEquals(false, opts.showAll());
     }
 
     @Test
@@ -117,6 +110,5 @@ public class ApplicationOptionsTest {
         assertEquals(null, opts.getSizeMax());
         assertEquals(null, opts.getSizeMin());
         assertEquals("esf", opts.getSort());
-        assertEquals(true, opts.showAll());
     }
 }

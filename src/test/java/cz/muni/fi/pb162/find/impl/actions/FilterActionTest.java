@@ -53,10 +53,10 @@ public class FilterActionTest {
     }
 
     @Test
-    public void shouldFilterBigHiddenFiles() throws Exception {
+    public void shouldFilterBigFiles() throws Exception {
         ApplicationOptions options = parseOptions("-M 100");
         List<SearchEntry> entries = new ArrayList<>();
-        SearchEntry hidFile = createFile(".file1", 100, true); // FALSE
+        SearchEntry hidFile = createFile(".file1", 100, true); // TRUE
         SearchEntry pathHidFile = createFile("../file_path/.file.txt", 10, true); // FALSE
         SearchEntry normFile = createFile("file1", 1000, false); // FALSE
         SearchEntry pathFile = createFile("../file_path/file.txt", 20, false); // TRUE
@@ -73,8 +73,8 @@ public class FilterActionTest {
         testNotContains(filtered, (normFile));
         testContains(filtered, (pathFile));
         testContains(filtered, (hidPathFileListed));
-        testNotContains(filtered, (hidFile));
-        testNotContains(filtered, (pathHidFile));
+        testContains(filtered, (hidFile));
+        testContains(filtered, (pathHidFile));
     }
 
 }

@@ -110,8 +110,6 @@ public class FSWalkResultTest {
         sPaths.add("file.cfg");
         sPaths.add("file.t");
         sPaths.add("file.txt");
-        sPaths.add(".file.txt");
-        sPaths.add(".DOC.hidden");
 
         List<Path> paths = createPaths(simpleDir, sPaths);
         testPaths(walkResult, paths);

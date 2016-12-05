@@ -27,7 +27,7 @@ public class FilterActionTest {
     }
 
     @Test
-    public void shouldFilterHiddenFiles() throws Exception {
+    public void shouldPassAllFiles() throws Exception {
         ApplicationOptions options = parseOptions("");
         List<SearchEntry> entries = new ArrayList<>();
         SearchEntry hidFile = createFile(".file1", true);
@@ -47,9 +47,8 @@ public class FilterActionTest {
         testContains(filtered, normFile);
         testContains(filtered, pathFile);
         testContains(filtered, (hidPathFileListed));
-
-        testNotContains(filtered, hidFile);
-        testNotContains(filtered, pathHidFile);
+        testContains(filtered, hidFile);
+        testContains(filtered, pathHidFile);
     }
 
     @Test

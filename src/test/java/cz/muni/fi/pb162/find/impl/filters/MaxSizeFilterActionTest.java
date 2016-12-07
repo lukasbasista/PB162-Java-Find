@@ -19,7 +19,7 @@ public class MaxSizeFilterActionTest {
 
     private static void testTrue(SearchEntry what)
     {
-        assertTrue("Filtered hidden file \"" + what + "\" greater than threshold (" +  Threshold +").", filter.filter(what));
+        assertTrue("Filtered file \"" + what + "\" greater than threshold (" +  Threshold +").", filter.filter(what));
     }
 
     private static void testFalse(SearchEntry what)

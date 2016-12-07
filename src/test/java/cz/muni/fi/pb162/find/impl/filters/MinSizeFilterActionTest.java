@@ -15,11 +15,11 @@ import org.junit.Test;
  */
 public class MinSizeFilterActionTest {
     private static final long Threshold = 200;
-    private static BasicFilter filter = new MaxSizeFilter(new ArrayList<SearchEntry>(), Threshold);
+    private static BasicFilter filter = new MinSizeFilter(new ArrayList<SearchEntry>(), Threshold);
 
     private static void testTrue(SearchEntry what)
     {
-        assertTrue("Filtered hidden file \"" + what + "\" less than threshold (" +  Threshold +").", filter.filter(what));
+        assertTrue("Filtered file \"" + what + "\" less than threshold (" +  Threshold +").", filter.filter(what));
     }
 
     private static void testFalse(SearchEntry what)
@@ -30,13 +30,13 @@ public class MinSizeFilterActionTest {
     @Test
     public void shouldAddGreaterThanThreshold() throws Exception {
         SearchEntry se = createFile("ahoj", 120);
-        testTrue(se);
+        testFalse(se);
     }
 
     @Test
     public void shouldNotAddLessThanThreshold() throws Exception {
         SearchEntry se = createFile("ahoj", 220);
-        testFalse(se);
+        testTrue(se);
     }
 
     @Test

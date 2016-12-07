@@ -5,6 +5,14 @@ Homework assignment no. 3, Find
 
 **Submission deadline:** December 23rd
 
+Changelog
+---------
+```
+7/12/2016 Fixed typo in package name cz.muni.fi.pb162.find.filesystem
+7/12/2016 Adding more precise description of FileNameFilter + Changelog
+```
+
+
 General information
 -------------------
 In this assignment you will implement a command line utility used for file search. 
@@ -96,7 +104,7 @@ Implement the following filters:
 
 | filter class       | additional constructor parameter | description                  | Additional info |
 | ------------------ | -------------- | -----------------------------------------------|-----------------|   
-| FileNameFilter     | String name    | filter based on file/directory name.           |                 |
+| FileNameFilter     | String regex   | filter based on file/directory name.           | ```String#matches(String)``` |
 | MaxSizeFilter      | long maxSize   | filter based on maximum size of file/directory |                 |
 | MinSizeFilter      | long minSize   | filter based on minimum size of file/directory |                 |
 | FileContentFilter  | String regex   | filter based on the content of a file          | ```String#matches(String)``` is sufficient |

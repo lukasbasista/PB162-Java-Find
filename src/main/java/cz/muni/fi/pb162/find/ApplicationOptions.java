@@ -1,6 +1,6 @@
 package cz.muni.fi.pb162.find;
 
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 
 /**
  * Applications options interface, it will provide only getters for specified variables

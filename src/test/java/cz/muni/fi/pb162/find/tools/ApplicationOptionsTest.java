@@ -4,7 +4,7 @@ import static cz.muni.fi.pb162.find.TestUtils.parseOptions;
 import static org.junit.Assert.assertEquals;
 
 import cz.muni.fi.pb162.find.ApplicationOptions;
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 import org.junit.Assert;
 import org.junit.Test;
 

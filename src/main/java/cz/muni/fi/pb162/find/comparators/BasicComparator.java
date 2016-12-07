@@ -2,7 +2,7 @@ package cz.muni.fi.pb162.find.comparators;
 
 import java.util.Comparator;
 
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 
 /**
  * BasicComparator interface that all of yours custom comparators should implement

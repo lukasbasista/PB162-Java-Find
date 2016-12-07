@@ -1,23 +1,23 @@
-package cz.muni.fi.pb162.find.filesystestem;
+package cz.muni.fi.pb162.find.filesystem;
 
 import java.nio.file.Path;
 
 /**
  * @author pstanko
  */
-public class FileEntry extends SearchEntry {
+public class DirEntry extends SearchEntry {
 
-    public FileEntry(Path path) {
+    public DirEntry(Path path) {
         super(path);
     }
 
     @Override
     public Types getType() {
-        return Types.FILE;
+        return Types.DIR;
     }
 
     @Override
     public String toString() {
-        return "F " + super.toString();
+        return "D " + super.toString();
     }
 }

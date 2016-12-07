@@ -1,6 +1,6 @@
 package cz.muni.fi.pb162.find;
 
-import cz.muni.fi.pb162.find.filesystestem.*;
+import cz.muni.fi.pb162.find.filesystem.*;
 import cz.muni.fi.pb162.find.tools.OptionParser;
 import cz.muni.fi.pb162.find.tools.OptionParserImpl;
 import org.apache.tools.ant.types.Commandline;

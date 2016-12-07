@@ -1,4 +1,4 @@
-package cz.muni.fi.pb162.find.filesystestem;
+package cz.muni.fi.pb162.find.filesystem;
 
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;

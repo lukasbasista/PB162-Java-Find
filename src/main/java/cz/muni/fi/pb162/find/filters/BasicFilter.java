@@ -3,7 +3,7 @@ package cz.muni.fi.pb162.find.filters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 
 /**
  * Created by pstanko.

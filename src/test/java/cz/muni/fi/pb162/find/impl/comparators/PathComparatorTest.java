@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import cz.muni.fi.pb162.find.comparators.BasicComparator;
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 import cz.muni.fi.pb162.find.tools.SortFactory;
 import org.junit.Test;
 

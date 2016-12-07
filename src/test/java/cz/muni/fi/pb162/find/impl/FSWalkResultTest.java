@@ -14,9 +14,8 @@ import java.util.stream.Collectors;
 
 import cz.muni.fi.pb162.find.ApplicationOptions;
 import cz.muni.fi.pb162.find.exceptions.SimpleSearchException;
-import cz.muni.fi.pb162.find.filesystestem.FSWalkResult;
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
-import cz.muni.fi.pb162.find.tools.FileTools;
+import cz.muni.fi.pb162.find.filesystem.FSWalkResult;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 import org.junit.Test;
 
 

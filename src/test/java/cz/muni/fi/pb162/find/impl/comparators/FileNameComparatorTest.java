@@ -1,6 +1,6 @@
 package cz.muni.fi.pb162.find.comparators;
 
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 import cz.muni.fi.pb162.find.tools.SortFactory;
 import org.junit.Test;
 

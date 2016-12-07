@@ -10,7 +10,7 @@ import java.util.List;
 
 import cz.muni.fi.pb162.find.ApplicationOptions;
 import cz.muni.fi.pb162.find.actions.FilterAction;
-import cz.muni.fi.pb162.find.filesystestem.SearchEntry;
+import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 import org.junit.Test;
 
 /**

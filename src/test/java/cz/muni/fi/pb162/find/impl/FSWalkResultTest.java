@@ -27,7 +27,6 @@ public class FSWalkResultTest {
 
     private final String startDir = "./tree/";
     private final String simpleDir = startDir + "simple";
-    private final String hiddenDir = startDir + "hidden";
     private final String oneExtDir = startDir + "one_ext";
 
 

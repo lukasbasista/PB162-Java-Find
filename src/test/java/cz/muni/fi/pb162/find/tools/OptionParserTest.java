@@ -38,17 +38,6 @@ public class OptionParserTest {
     }
 
     @Test()
-    public void shouldParseAll() throws Exception {
-        Map<String, String> parsedArgs = parse("-a");
-        assertEquals(1, parsedArgs.size());
-        assertEquals("true", parsedArgs.get("all"));
-
-        parsedArgs = parse("--all");
-        assertEquals(1, parsedArgs.size());
-        assertEquals("true", parsedArgs.get(OPT_ALL));
-    }
-
-    @Test()
     public void shouldParseDirectory() throws Exception {
         Map<String, String> parsedArgs = parse("-d /dev");
         assertEquals(1, parsedArgs.size());

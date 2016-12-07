@@ -12,7 +12,6 @@ public interface OptionParser {
 
     String OPT_DIR = "dir";
     String OPT_NAME = "name";
-    String OPT_ALL = "all";
     String OPT_TYPE = "type";
     String OPT_SIZE_MAX = "size-max";
     String OPT_SIZE_MIN = "size-min";

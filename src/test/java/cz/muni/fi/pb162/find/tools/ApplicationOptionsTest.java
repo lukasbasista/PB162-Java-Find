@@ -42,7 +42,7 @@ public class ApplicationOptionsTest {
 
     @Test
     public void shouldShowAll() throws Exception {
-        ApplicationOptions opts = parseOptions("-a");
+        ApplicationOptions opts = parseOptions("");
         assertEquals(SearchEntry.Types.BOTH, opts.getType());
         assertEquals(".", opts.getDirectory());
         assertEquals(null, opts.getNameRegex());
@@ -102,7 +102,7 @@ public class ApplicationOptionsTest {
 
     @Test
     public void shouldHaveMultiple() throws Exception {
-        ApplicationOptions opts = parseOptions("--type=FILE -a -d /dev -s esf");
+        ApplicationOptions opts = parseOptions("--type=FILE -d /dev -s esf");
         assertEquals(SearchEntry.Types.FILE, opts.getType());
         assertEquals("/dev", opts.getDirectory());
         assertEquals(null, opts.getNameRegex());

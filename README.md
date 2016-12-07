@@ -108,7 +108,6 @@ Implement the following filters:
 | MaxSizeFilter      | long maxSize   | filter based on maximum size of file/directory |                 |
 | MinSizeFilter      | long minSize   | filter based on minimum size of file/directory |                 |
 | FileContentFilter  | String regex   | filter based on the content of a file          | ```String#matches(String)``` is sufficient |
-| HiddenFilter       |                | filter based on if file is **not** hidden      |                 | 
 
 By examining the ```BasicFilter``` class, it should be clear that you only need to create a constructor and implement the ```filter(SearchEntry path)``` method.
 

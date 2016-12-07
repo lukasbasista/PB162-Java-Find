@@ -34,7 +34,6 @@ public class OptionParserImpl implements OptionParser {
         Options options = new Options();
 
         options.addOption(optionDir());
-        options.addOption(optionAll());
         options.addOption(optionFileText());
         options.addOption(optionName());
         options.addOption(optionSizeMax());
@@ -61,9 +60,6 @@ public class OptionParserImpl implements OptionParser {
 
             for (Option o : cmd.getOptions()) {
                 System.out.println("Passed option: " + o.getLongOpt());
-                if (o.getArgName().equals(OPT_ALL)) {
-                    parsedOptions.put(o.getArgName(), "true");
-                }
                 if (o.getValue() != null) {
                     System.out.println("\twith value: " + o.getValue());
                     parsedOptions.put(o.getArgName(), o.getValue().trim());
@@ -115,14 +111,6 @@ public class OptionParserImpl implements OptionParser {
                 .longOpt(OPT_TYPE)
                 .hasArg()
                 .desc("File type (file|sym|dir|other)")
-                .build();
-    }
-
-    private Option optionAll() {
-        return Option.builder("a")
-                .argName(OPT_ALL)
-                .longOpt(OPT_ALL)
-                .desc("Show also hidden files and dirs")
                 .build();
     }
 

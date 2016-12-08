@@ -17,17 +17,19 @@ public class SortFactory {
     /**
      * Can be static because file path comparator does not keep any state, nothing to change.
      */
-    private static final FilePathComparator absPath = new FilePathComparator();
+    private static final FilePathComparator DEFAULT_COMPARATOR = new FilePathComparator();
 
     /**
      * Static method that returns a decorated basic comparator
      * Comparators are in specific order (param)
      *
-     * @param order
-     * @return
+     * see {@link cz.muni.fi.pb162.find.ApplicationOptions#getSort()}
+     *
+     * @param order string representing the order of comparators
+     * @return comparator chain for given string
      */
     public static BasicComparator create(String order) {
-        BasicComparator result = absPath;
+        BasicComparator result = DEFAULT_COMPARATOR;
 
         for (int i = order.length() - 1; i >= 0; i--) {
             char c = order.charAt(i);
@@ -40,7 +42,7 @@ public class SortFactory {
     private static BasicComparator yield(char ch, BasicComparator nextComparator) {
         switch (ch) {
             case 'f':
-                return absPath;
+                return DEFAULT_COMPARATOR;
             case 's':
                 return new FileSizeComparator(nextComparator);
             case 'e':
@@ -48,7 +50,7 @@ public class SortFactory {
             case 'n':
                 return new FileNameComparator(nextComparator);
             default:
-                return absPath;
+                return DEFAULT_COMPARATOR;
         }
     }
 }

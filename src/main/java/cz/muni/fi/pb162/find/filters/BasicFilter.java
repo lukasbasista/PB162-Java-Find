@@ -29,6 +29,10 @@ public abstract class BasicFilter {
      */
     public abstract boolean filter(SearchEntry path);
 
+    /**
+     * Filters provided list of entries
+     * @return filtered list of entries
+     */
     public List<SearchEntry> filtered() {
         return paths.stream().filter(this::filter).collect(Collectors.toList());
     }

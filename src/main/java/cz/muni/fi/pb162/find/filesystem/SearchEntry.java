@@ -15,9 +15,17 @@ public abstract class SearchEntry {
     private Path path;
     private long size;
 
+    /**
+     * Constructor for SearchEntry class.
+     */
     public SearchEntry() {
     }
 
+    /**
+     * Constructor for SearchEntry class.
+     *
+     * @param path Path object wrapped by this entry
+     */
     public SearchEntry(Path path) {
         this.path = path;
     }
@@ -62,10 +70,12 @@ public abstract class SearchEntry {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
+        if (this == o) {
             return true;
-        if (!(o instanceof SearchEntry))
+        }
+        if (!(o instanceof SearchEntry)) {
             return false;
+        }
 
         SearchEntry that = (SearchEntry) o;
 

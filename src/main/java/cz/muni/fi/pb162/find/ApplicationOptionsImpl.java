@@ -17,7 +17,7 @@ public class ApplicationOptionsImpl implements ApplicationOptions {
 
     /**
      * Takes the map, parsed from Apache commons cli parser
-     * @param options
+     * @param options map containing unprocessed application options
      */
     public ApplicationOptionsImpl(Map<String, String> options) {
         this.options = new HashMap<>(options);

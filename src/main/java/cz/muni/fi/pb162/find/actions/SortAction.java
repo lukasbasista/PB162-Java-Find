@@ -2,7 +2,6 @@ package cz.muni.fi.pb162.find.actions;
 
 import java.util.List;
 
-import cz.muni.fi.pb162.find.ApplicationOptions;
 import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 
 /**
@@ -13,7 +12,7 @@ import cz.muni.fi.pb162.find.filesystem.SearchEntry;
 public interface SortAction {
     /**
      * Sorts all the search entities returned from filter.
-     * The order of elements should be determined by {@link ApplicationOptions#getSort()}
+     * The order of elements should be determined by {@link cz.muni.fi.pb162.find.ApplicationOptions#getSort()}
      *
      * {@link cz.muni.fi.pb162.find.tools.SortFactory#create(String)} can be used to create the comparator chain.
      *

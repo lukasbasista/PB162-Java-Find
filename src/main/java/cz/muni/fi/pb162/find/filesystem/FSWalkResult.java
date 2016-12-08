@@ -27,9 +27,9 @@ public abstract class FSWalkResult extends SimpleFileVisitor<Path> {
      * @param options application optios
      */
     public FSWalkResult(ApplicationOptions options) {
-        if (options == null)
+        if (options == null) {
             throw new IllegalArgumentException("options");
-
+        }
         this.opts = options;
     }
 

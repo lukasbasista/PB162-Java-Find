@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import cz.muni.fi.pb162.find.exceptions.SimpleSearchException;
-
 /**
  * Do not modify implemented methods but you can add yous!
  *
@@ -27,19 +25,22 @@ public class FileTools {
      */
     public static String fileExtension(Path path) {
         String fileName = path.getFileName().toString();
-        if (fileName.startsWith(".") && fileName.indexOf('.') == fileName.lastIndexOf("."))
+        if (fileName.startsWith(".") && fileName.indexOf('.') == fileName.lastIndexOf(".")) {
             return null;
-        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+        }
+        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0) {
             return fileName.substring(fileName.lastIndexOf(".") + 1);
-        else return null;
+        } else {
+            return null;
+        }
     }
 
     /**
-     * Returns the total size of directory. The size of directory is equal to
+     * Returns the size of file or the total size of a directory . The size of directory is equal to
      * the sum of sizes of files in that directory and all its subdirectories.
      *
-     * @param path
-     * @return
+     * @param path file/directory path
+     * @return total size of all entries on given path
      */
     public static long dirSize(Path path) {
         try {

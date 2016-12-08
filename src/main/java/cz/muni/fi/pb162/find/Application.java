@@ -66,8 +66,7 @@ public class Application {
             return;
         }
 
-        switch (options.getType())
-        {
+        switch (options.getType()) {
             case DIR:
                 processAndPrintEntries("Directories: ", walker.getDirectories());
                 break;

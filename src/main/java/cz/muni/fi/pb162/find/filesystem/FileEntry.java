@@ -7,6 +7,12 @@ import java.nio.file.Path;
  */
 public class FileEntry extends SearchEntry {
 
+
+    /**
+     * Constructor for FileEntry class.
+     *
+     * @param path Path object wrapped by this entry
+     */
     public FileEntry(Path path) {
         super(path);
     }

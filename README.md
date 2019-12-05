@@ -8,10 +8,7 @@ Homework assignment no. 3, Find
 Changelog
 ---------
 ```
-7/12/2016 Fixed typo in package name cz.muni.fi.pb162.find.filesystem
-7/12/2016 Adding more precise description of FileNameFilter + Changelog
-7/12/2016 Removed special treatment of hidden files, fixed MinSizeFilterActionTest
-8/12/2016 Added missing checkstyle 
+ 
 ```
 
 

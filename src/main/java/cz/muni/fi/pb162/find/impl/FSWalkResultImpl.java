@@ -17,12 +17,13 @@ import java.util.stream.Collectors;
  */
 
 public class FSWalkResultImpl extends FSWalkResult {
+
     /**
-     * Constructor for class FSWalkResult
      *
-     * @param options application optios
+     * @param options ,
      */
     public FSWalkResultImpl(ApplicationOptions options) {
+
         super(options);
     }
 
@@ -51,19 +52,19 @@ public class FSWalkResultImpl extends FSWalkResult {
     }
 
     private static List<File> listFileTree(File start) {
-        List<File> retlist = new ArrayList<>();
+        List<File> rlist = new ArrayList<>();
         if (start == null) {
-            return retlist;
+            return rlist;
         }
-        retlist.add(start);
+        rlist.add(start);
         for (File entry : start.listFiles()) {
             if (entry.isFile()) {
-                retlist.add(entry);
+                rlist.add(entry);
             }
             if (entry.isDirectory()) {
-                retlist.addAll(listFileTree(entry));
+                rlist.addAll(listFileTree(entry));
             }
         }
-        return retlist;
+        return rlist;
     }
 }

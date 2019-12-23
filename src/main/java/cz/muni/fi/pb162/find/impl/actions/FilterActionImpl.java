@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 public class FilterActionImpl implements FilterAction {
-    private final ApplicationOptions opts;
+    private final ApplicationOptions options;
 
     /**
      * Constructor
@@ -24,35 +24,35 @@ public class FilterActionImpl implements FilterAction {
      * @param opts ,
      */
     public FilterActionImpl(ApplicationOptions opts) {
-        this.opts = opts;
+        this.options = opts;
     }
 
     @Override
     public List<SearchEntry> filter(List<SearchEntry> entries) {
-        List<SearchEntry> retlist = new ArrayList<>(entries);
+        List<SearchEntry> rlist = new ArrayList<>(entries);
 
-        if (opts.getTextRegex() != null) {
+        if (options.getTextRegex() != null) {
             FileContentFilter fcf = new FileContentFilter
-                    (retlist, opts.getTextRegex());
-            retlist = fcf.filtered();
+                    (rlist, options.getTextRegex());
+            rlist = fcf.filtered();
         }
 
-        if (opts.getNameRegex() != null) {
+        if (options.getNameRegex() != null) {
             FileNameFilter fnf = new FileNameFilter
-                    (retlist, opts.getNameRegex());
-            retlist = fnf.filtered();
+                    (rlist, options.getNameRegex());
+            rlist = fnf.filtered();
         }
 
-        if (opts.getSizeMax() != null) {
-            MaxSizeFilter masf = new MaxSizeFilter(retlist, opts.getSizeMax());
-            retlist = masf.filtered();
+        if (options.getSizeMax() != null) {
+            MaxSizeFilter maxsf = new MaxSizeFilter(rlist, options.getSizeMax());
+            rlist = maxsf.filtered();
         }
 
-        if (opts.getSizeMin() != null) {
-            MinSizeFilter misf = new MinSizeFilter(retlist, opts.getSizeMin());
-            retlist = misf.filtered();
+        if (options.getSizeMin() != null) {
+            MinSizeFilter minsf = new MinSizeFilter(rlist, options.getSizeMin());
+            rlist = minsf.filtered();
         }
-        return retlist;
+        return rlist;
 
     }
 

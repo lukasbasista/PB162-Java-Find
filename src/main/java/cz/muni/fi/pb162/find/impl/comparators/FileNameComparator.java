@@ -11,13 +11,12 @@ public class FileNameComparator implements BasicComparator {
     private BasicComparator comparator;
 
     /**
-     * Constructor
      *
-     * @param secondComparator ,
+     * @param comparator ,
      */
-    public FileNameComparator(BasicComparator secondComparator) {
+    public FileNameComparator(BasicComparator comparator) {
 
-        this.comparator = secondComparator;
+        this.comparator = comparator;
     }
 
     @Override
@@ -27,12 +26,12 @@ public class FileNameComparator implements BasicComparator {
     }
 
     @Override
-    public int compare(SearchEntry searchEntry, SearchEntry t1) {
-        String p1 = searchEntry.getFileName().toString();
-        int comparisonByFirst = p1.compareTo(t1.getFileName().toString());
+    public int compare(SearchEntry searchEntry, SearchEntry se) {
+        String file = searchEntry.getFileName().toString();
+        int comparisonByFirst = file.compareTo(se.getFileName().toString());
 
         if (comparisonByFirst == 0) {
-            return getNextComparator().compare(searchEntry, t1);
+            return getNextComparator().compare(searchEntry, se);
         }
         return comparisonByFirst;
     }

@@ -16,9 +16,9 @@ public class FilePathComparator implements BasicComparator {
     }
 
     @Override
-    public int compare(SearchEntry arg0, SearchEntry arg1) {
+    public int compare(SearchEntry se, SearchEntry se1) {
 
-        return arg0.getPath().compareTo(arg1.getPath());
+        return se.getPath().compareTo(se1.getPath());
     }
 
 }

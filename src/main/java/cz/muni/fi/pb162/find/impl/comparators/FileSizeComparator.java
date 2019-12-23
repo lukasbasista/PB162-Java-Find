@@ -11,12 +11,12 @@ public class FileSizeComparator implements BasicComparator {
     private BasicComparator comparator;
 
     /**
-     * Constructor
      *
-     * @param secondComparator ,
+     * @param comparator ,
      */
-    public FileSizeComparator(BasicComparator secondComparator) {
-        this.comparator = secondComparator;
+    public FileSizeComparator(BasicComparator comparator) {
+
+        this.comparator = comparator;
     }
 
     @Override

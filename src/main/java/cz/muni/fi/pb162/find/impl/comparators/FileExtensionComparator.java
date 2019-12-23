@@ -12,13 +12,12 @@ public class FileExtensionComparator implements BasicComparator {
     private BasicComparator comparator;
 
     /**
-     * Constructor ,
      *
-     * @param secondComparator ,
+     * @param comparator ,
      */
-    public FileExtensionComparator(BasicComparator secondComparator) {
+    public FileExtensionComparator(BasicComparator comparator) {
 
-        this.comparator = secondComparator;
+        this.comparator = comparator;
     }
 
     @Override
@@ -28,19 +27,19 @@ public class FileExtensionComparator implements BasicComparator {
     }
 
     @Override
-    public int compare(SearchEntry searchEntry, SearchEntry t1) {
+    public int compare(SearchEntry searchEntry, SearchEntry se) {
         String p1 = FileTools.fileExtension(searchEntry.getPath());
-        String p2 = FileTools.fileExtension(t1.getPath());
+        String p2 = FileTools.fileExtension(se.getPath());
 
         if (p1 != null && p2 != null) {
             int comparisonByFirst = p1.compareTo(p2);
             if (comparisonByFirst == 0) {
-                return getNextComparator().compare(searchEntry, t1);
+                return getNextComparator().compare(searchEntry, se);
             }
             return comparisonByFirst;
         }
         if (p1 == null && p2 == null) {
-            return getNextComparator().compare(searchEntry, t1);
+            return getNextComparator().compare(searchEntry, se);
         }
         if (p1 == null) {
             return -1;
